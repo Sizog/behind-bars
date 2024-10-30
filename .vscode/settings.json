@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "test jostick.sln"
+    "dotnet.defaultSolution": "behind-bars.sln"
 }
