@@ -795,7 +795,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: "\u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C"
   objectType: 2
-  DoorSceneName: Shalf open Key
+  DoorSceneName: corridor before
   MessageText: 
   itemIndex: 0
   itemName: 
@@ -843,10 +843,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 1.8, y: 2.05}
-      - {x: -2.34, y: 1.93}
-      - {x: -2.35, y: -2.15}
-      - {x: 1.73, y: -2.11}
+    - - {x: 5.52, y: 2.32}
+      - {x: -2.34, y: 2.33}
+      - {x: -2.35, y: -2.96}
+      - {x: 5.44, y: -2.91}
   m_UseDelaunayMesh: 0
 --- !u!4 &1563103813
 Transform:
@@ -857,7 +857,7 @@ Transform:
   m_GameObject: {fileID: 1563103809}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.5123, y: 0.26, z: 0}
+  m_LocalPosition: {x: -1.94, y: 0.26, z: 0}
   m_LocalScale: {x: 0.21502842, y: 0.8555251, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

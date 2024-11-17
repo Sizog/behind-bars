@@ -36,35 +36,47 @@ EditorBuildSettings:
     path: Assets/Scenes/Room07.unity
     guid: e1cd339e8beac2c4f9ba2d9493cc93f9
   - enabled: 1
-    path: Assets/For game/Scenes/Videos/Video1/Scens/Video1.unity
-    guid: 70489306f3237d64e98f87b55ed9f1ef
-  - enabled: 1
-    path: Assets/For game/Scenes/Menu/Scens/Menu.unity
+    path: Assets/For game/Scenes/other/Menu/Scens/Menu.unity
     guid: f509dc46e4d9d9c45a1887a519957d40
   - enabled: 1
-    path: "Assets/For game/Scenes/1/Scens/Room/Room Shalf \u0441lose Key.unity"
-    guid: 5b6872956704dfd41a8878aee6e9c010
+    path: Assets/For game/Scenes/other/Videos/Video1/Scens/Video1.unity
+    guid: 70489306f3237d64e98f87b55ed9f1ef
   - enabled: 1
+    path: "Assets/For game/Scenes/playing/1/Scens/Room/Room Shalf \u0441lose Key.unity"
+    guid: 5b6872956704dfd41a8878aee6e9c010
+  - enabled: 0
     path: Assets/For game/Scenes/1/Scens/inspect/Shalf close.unity
     guid: 0f58dafa692371549b7ffc1d977f301f
   - enabled: 1
-    path: Assets/For game/Scenes/1/Scens/inspect/Shalf close Key.unity
+    path: Assets/For game/Scenes/playing/1/Scens/inspect/Shalf close Key.unity
     guid: 962fd891059d75c4fafa5a106e6548fb
-  - enabled: 1
+  - enabled: 0
     path: Assets/For game/Scenes/1/Scens/inspect/Shalf open.unity
     guid: 7acad9d4e7dcaca44b05ca2e8ecc947b
   - enabled: 1
-    path: Assets/For game/Scenes/1/Scens/inspect/Shalf open Key.unity
+    path: Assets/For game/Scenes/playing/1/Scens/inspect/Shalf open Key.unity
     guid: 245cc30805fd0f041aa794080fd9a520
-  - enabled: 1
+  - enabled: 0
     path: Assets/For game/Scenes/1/Scens/Room/Room Shalf open.unity
     guid: 804c6b1c0e88d4b45b4ba112c541c6f7
   - enabled: 1
-    path: Assets/For game/Scenes/1/Scens/Room/Room Shalf open Key.unity
+    path: Assets/For game/Scenes/playing/1/Scens/Room/Room Shalf open Key.unity
     guid: ebc5af2f2c25a7e41a548653a66a911f
-  - enabled: 1
+  - enabled: 0
     path: "Assets/For game/Scenes/1/Scens/Room/Room Shalf \u0441lose.unity"
     guid: b48f6b84d4473db4e906ac280900295d
+  - enabled: 1
+    path: Assets/For game/Scenes/playing/2/Scens/corridor after.unity
+    guid: ed69149db842aa844949ffee31962f0d
+  - enabled: 1
+    path: Assets/For game/Scenes/playing/2/Scens/corridor before.unity
+    guid: 79a39baacd387d14191a08237f2154b1
+  - enabled: 1
+    path: Assets/For game/Scenes/playing/2/Scens/scanner.unity
+    guid: 515257e571bf5c64197666989b08df43
+  - enabled: 1
+    path: Assets/For game/Scenes/playing/2/Scens/scanner 1.unity
+    guid: 09d6230ac7598ae4e92f7d7376813706
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 89a6787c85f482a4a9b21eb8d7479537, type: 2}
     com.unity.localization.settings: {fileID: 11400000, guid: 8aa056e0d4d4ed7459c20b2a8e0d57af, type: 2}
