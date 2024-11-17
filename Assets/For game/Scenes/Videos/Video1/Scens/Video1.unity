@@ -804,7 +804,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: "\u0412\u044B\u0445\u043E\u0434"
   objectType: 2
-  DoorSceneName: "1 Shalf \u0441lose Key"
+  DoorSceneName: "Room Shalf \u0441lose Key"
   MessageText: 
   itemIndex: 1
   itemName: 1
