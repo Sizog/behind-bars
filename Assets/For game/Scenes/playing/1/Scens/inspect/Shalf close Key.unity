@@ -1036,7 +1036,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: "\u0437\u0430\u043A\u0440\u044B\u0442\u044C"
   objectType: 2
-  DoorSceneName: "Room Shalf \u0441lose Key"
+  DoorSceneName: Room Shalf close Key
   MessageText: 
   itemIndex: 0
   itemName: 

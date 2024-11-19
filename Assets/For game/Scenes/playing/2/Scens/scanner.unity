@@ -954,7 +954,7 @@ MonoBehaviour:
   DoorSceneName: scanner 1
   MessageText: 
   itemIndex: 1
-  itemName: "\u041A\u043B\u044E\u0447"
+  itemName: "\u041A\u043B\u044E\u0447 \u043A\u0430\u0440\u0442\u0430"
 --- !u!60 &1563103812
 PolygonCollider2D:
   m_ObjectHideFlags: 0
