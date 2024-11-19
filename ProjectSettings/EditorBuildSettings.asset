@@ -18,11 +18,29 @@ EditorBuildSettings:
     path: Assets/For game/Scenes/playing/1/Scens/inspect/Shalf open Key.unity
     guid: 245cc30805fd0f041aa794080fd9a520
   - enabled: 1
+    path: Assets/For game/Scenes/playing/1/Scens/Ok/Ok1.unity
+    guid: 173bdf742b790644a8e304e666611bd0
+  - enabled: 1
     path: Assets/For game/Scenes/playing/1/Scens/Room/Room Shalf close Key.unity
     guid: 5b6872956704dfd41a8878aee6e9c010
   - enabled: 1
     path: Assets/For game/Scenes/playing/1/Scens/Room/Room Shalf open Key.unity
     guid: ebc5af2f2c25a7e41a548653a66a911f
+  - enabled: 1
+    path: Assets/For game/Scenes/playing/1/Scens/Room/Room Shalf open Key 1.unity
+    guid: 542a534811bef1e4f806874c8e9475d9
+  - enabled: 1
+    path: Assets/For game/Scenes/playing/1/Scens/V2/Room1(V2).unity
+    guid: 4a339c9e58e47be4fbf8815dd58d2fcc
+  - enabled: 1
+    path: Assets/For game/Scenes/playing/2/Ok2/Ok2.unity
+    guid: 5c4287e7dd3462f428b459a31a1b903e
+  - enabled: 1
+    path: Assets/For game/Scenes/playing/2/Ok2/Ok2(2).unity
+    guid: 2b06a13b0b55cc5479042d9ab2e1e69c
+  - enabled: 1
+    path: Assets/For game/Scenes/playing/2/Ok2/Ok2(2) 1.unity
+    guid: 2f3afc8222b606f458988612cefbd886
   - enabled: 1
     path: Assets/For game/Scenes/playing/2/Scens/corridor after.unity
     guid: ed69149db842aa844949ffee31962f0d
@@ -44,6 +62,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/For game/Scenes/playing/2/Scens/scanner 2.unity
     guid: 383ab7ba633143c40ae2bab860836ab7
+  - enabled: 1
+    path: Assets/For game/Scenes/playing/3/Ok/Ok3.unity
+    guid: 06b9cec502465dc4fbffbc679bd7f789
+  - enabled: 1
+    path: Assets/For game/Scenes/playing/3/Ok/Ok3(2).unity
+    guid: 386171e9d11b59d46bc121406ff45282
+  - enabled: 1
+    path: Assets/For game/Scenes/playing/3/Ok/Ok3(2) 1.unity
+    guid: f7e91af43386421438468181761ac0b4
   - enabled: 1
     path: Assets/For game/Scenes/playing/3/Scenes/Case.unity
     guid: 57a35e640d191584e99bb36047e43111
@@ -75,23 +102,20 @@ EditorBuildSettings:
     path: Assets/For game/Scenes/playing/4/scens/Room4.unity
     guid: 1943a627e8f72ee40bd79cc760e1ad17
   - enabled: 1
+    path: Assets/For game/Scenes/playing/4/scens/Room4 1.unity
+    guid: f072c0c80a83f4140b98689a97f4c64d
+  - enabled: 1
     path: Assets/For game/Scenes/playing/4/scens/Room4(2).unity
     guid: b53510b64d8053c48980c8f692001edf
+  - enabled: 1
+    path: Assets/For game/Scenes/playing/4/scens/Room4(2) 1.unity
+    guid: 07e2b6b25bbea7c4eae42ace0d85fd4a
   - enabled: 1
     path: Assets/For game/Scenes/playing/4/scens/Vase4.unity
     guid: 2cb2870b8eea51041928326780863414
   - enabled: 1
     path: Assets/For game/Scenes/playing/4/scens/Vase4(2).unity
     guid: 5f7a7a420de01f447b43922bd4ef1d5a
-  - enabled: 1
-    path: Assets/For game/Scenes/playing/2/Ok2/Ok2.unity
-    guid: 5c4287e7dd3462f428b459a31a1b903e
-  - enabled: 1
-    path: Assets/For game/Scenes/playing/3/Ok/Ok3.unity
-    guid: 06b9cec502465dc4fbffbc679bd7f789
-  - enabled: 1
-    path: Assets/For game/Scenes/playing/1/Scens/V2/Room1(V2).unity
-    guid: 4a339c9e58e47be4fbf8815dd58d2fcc
   - enabled: 1
     path: Assets/For game/Scenes/The and.unity
     guid: d6b057eb5c8e1434891883eac46d1e7c
