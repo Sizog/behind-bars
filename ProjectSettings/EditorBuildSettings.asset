@@ -119,6 +119,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/For game/Scenes/The and.unity
     guid: d6b057eb5c8e1434891883eac46d1e7c
+  - enabled: 1
+    path: Assets/For game/Scenes/playing/5/Room5 2.unity
+    guid: 9c17bc0deac86cb45b19f2664a70cec9
+  - enabled: 1
+    path: Assets/For game/Scenes/playing/5/Room5 1.unity
+    guid: eeb3f979e591c8747a3cb52ca863cb07
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 89a6787c85f482a4a9b21eb8d7479537, type: 2}
     com.unity.localization.settings: {fileID: 11400000, guid: 8aa056e0d4d4ed7459c20b2a8e0d57af, type: 2}
