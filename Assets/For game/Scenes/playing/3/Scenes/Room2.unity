@@ -294,7 +294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: "\u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C"
   objectType: 2
-  DoorSceneName: Case
+  DoorSceneName: Case3
   MessageText: 
   itemIndex: 0
   itemName: 
@@ -450,7 +450,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: "\u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C"
   objectType: 2
-  DoorSceneName: minicase
+  DoorSceneName: minicase3
   MessageText: 
   itemIndex: 0
   itemName: 
@@ -1587,7 +1587,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: "\u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C"
   objectType: 2
-  DoorSceneName: Clokc
+  DoorSceneName: Clokc3
   MessageText: 
   itemIndex: 0
   itemName: 
