@@ -942,7 +942,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Play
   objectType: 2
-  DoorSceneName: Room Shalf close Key
+  DoorSceneName: Chapter selection
   MessageText: 
   itemIndex: 1
   itemName: 
