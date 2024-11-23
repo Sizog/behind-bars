@@ -425,6 +425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be34cb62072d89246ab198e79acc1c19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Inventory: []
   VisitedLocationLog: []
   selectedObject: {fileID: 0}
   cursorTextures:
@@ -1378,7 +1379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: "\u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C"
   objectType: 2
-  DoorSceneName: Room Shalf close Key
+  DoorSceneName: 7 Police
   MessageText: 
   itemIndex: 0
   itemName: 

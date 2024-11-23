@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,10 +6,11 @@ using UnityEngine.UIElements;
 
 public class RoomLogic : MonoBehaviour
 {
+    [Serializable]
     public struct InventoryItem
     {
-        public int index;
-        public string itemName;
+        [SerializeField] public int index;
+        [SerializeField] public string itemName;
 
         public InventoryItem(int _index, string _itemName)
         {
@@ -16,16 +18,17 @@ public class RoomLogic : MonoBehaviour
             itemName = _itemName;
         }
     };
+    [SerializeField]
     public List<InventoryItem> Inventory;
     public List<string> VisitedLocationLog;
 
     public GameObject selectedObject;
 
     public Texture2D[] cursorTextures;
-    // 0 - Курсор Дверь
-    // 1 - Курсор Глаз
-    // 2 - Курсор Действие
-    // 3 - Курсор Взять предмет
+    // 0 - пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+    // 1 - пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
+    // 2 - пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    // 3 - пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
 
     public CursorMode cursorMode = CursorMode.Auto;
@@ -61,10 +64,8 @@ public class RoomLogic : MonoBehaviour
     }
     private void Start()
     {
-       
-            // Switch to 1920 x 1080 windowed
-            Screen.SetResolution(1920 , 1080, false);
-
+        // Switch to 1920 x 1080 windowed
+        Screen.SetResolution(1920 , 1080, false);
 
         var rootVisualElement = GetComponent<UIDocument>().rootVisualElement;
         textBlock = rootVisualElement.Q<Label>("TextBlock");
@@ -93,7 +94,6 @@ public class RoomLogic : MonoBehaviour
             for (int j = 0; j < textBlockCounter - 1; j++)
             {
                 textBlockLines[j] = textBlockLines[j + 1];
-
             }
             
             textBlockLines[textBlockCounter-1] = message + "\n\n";
@@ -115,6 +115,7 @@ public class RoomLogic : MonoBehaviour
         InventoryItem item = new InventoryItem(_index, _displayName);
         Inventory.Add(item);
     }
+
     public void ShowInventory()
     {
         string invText = "";
@@ -125,6 +126,11 @@ public class RoomLogic : MonoBehaviour
         }
 
         AddTextBlockMessage(invText);
+    }
+
+    public void ClearInventory() {
+        Inventory.Clear();
+        ShowInventory();
     }
     void Update()
     {
@@ -159,11 +165,7 @@ public class RoomLogic : MonoBehaviour
                     break;
                 }
                 
-            }
-
-
-
-            
+            }  
         }
         else
         {
