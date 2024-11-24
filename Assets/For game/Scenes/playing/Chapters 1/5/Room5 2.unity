@@ -285,6 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be34cb62072d89246ab198e79acc1c19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Inventory: []
   VisitedLocationLog: []
   selectedObject: {fileID: 0}
   cursorTextures:
