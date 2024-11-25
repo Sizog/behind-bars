@@ -325,8 +325,8 @@ EditorBuildSettings:
     path: Assets/For game/Scenes/other/Menu/Scens/znak vopros.unity
     guid: a7c1ee64e36ae2343a64f70e806181ff
   - enabled: 1
-    path: Assets/For game/Scenes/playing/Chapters 2/7/room/7 Police(1).unity
-    guid: 5842dfbff4d43ba46b91fcbb4515822d
+    path: Assets/For game/Scenes/playing/Chapters 2/7/Dialog/7Dialog.unity
+    guid: 1c991ce941d2957418a73a0f25d86eb4
   - enabled: 1
     path: Assets/For game/Scenes/playing/Chapters 2/7/Dialog/7Dialog1.unity
     guid: 1055da893f928ce4aacfd2d837ecaac6
@@ -343,8 +343,38 @@ EditorBuildSettings:
     path: Assets/For game/Scenes/playing/Chapters 2/7/Dialog/7Dialog4.unity
     guid: 9ab8fbd8533b4c74899e7d4301adb309
   - enabled: 1
-    path: Assets/For game/Scenes/playing/Chapters 2/7/Dialog/7Dialog.unity
-    guid: 1c991ce941d2957418a73a0f25d86eb4
+    path: Assets/For game/Scenes/playing/Chapters 2/7/Notebook/7Notebok 1.unity
+    guid: b2ce74578f0619d4aa6181dc9c086dd8
+  - enabled: 1
+    path: Assets/For game/Scenes/playing/Chapters 2/7/Notebook/7Notebok 2.unity
+    guid: 2396475e5ff442d43b8ccd03a40889bb
+  - enabled: 1
+    path: Assets/For game/Scenes/playing/Chapters 2/7/Notebook/7Notebok 3.unity
+    guid: b0e356193affbdf44963d7d9570ff25e
+  - enabled: 1
+    path: Assets/For game/Scenes/playing/Chapters 2/7/Notebook/7Notebok 4.unity
+    guid: 346daf119e153ed4296fdbacac684373
+  - enabled: 1
+    path: Assets/For game/Scenes/playing/Chapters 2/7/Notebook/7Notebok 5.unity
+    guid: 057ccd6f1e6e278439655419b1162a93
+  - enabled: 1
+    path: Assets/For game/Scenes/playing/Chapters 2/7/Notebook/7Notebok 6.unity
+    guid: d61be847e34ba5547a273cbe7e74f2f4
+  - enabled: 1
+    path: Assets/For game/Scenes/playing/Chapters 2/7/Notebook/7Notebok 7.unity
+    guid: daf43aae25d76004d8af534814e9832e
+  - enabled: 1
+    path: Assets/For game/Scenes/playing/Chapters 2/7/Notebook/7Notebok 8.unity
+    guid: 262723197f7123047a7b0923b9b5997d
+  - enabled: 1
+    path: Assets/For game/Scenes/playing/Chapters 2/7/room/7 Police(1).unity
+    guid: 5842dfbff4d43ba46b91fcbb4515822d
+  - enabled: 1
+    path: Assets/For game/Scenes/playing/Chapters 2/7/room/7 Police(2).unity
+    guid: 316d7de43f6f9b6468dffd66dee85916
+  - enabled: 1
+    path: Assets/For game/Scenes/playing/Chapters 2/7/room/7Notebok.unity
+    guid: b8ff04de2e348c84e85bf1f7b099803b
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 89a6787c85f482a4a9b21eb8d7479537, type: 2}
     com.unity.localization.settings: {fileID: 11400000, guid: 8aa056e0d4d4ed7459c20b2a8e0d57af, type: 2}
