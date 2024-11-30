@@ -375,6 +375,39 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/For game/Scenes/playing/Chapters 2/7/room/7Notebok.unity
     guid: b8ff04de2e348c84e85bf1f7b099803b
+  - enabled: 1
+    path: Assets/For game/Scenes/playing/Chapters 2/8/Dialog/Dialog8(1).unity
+    guid: cfead427e412ebd44a2bcf6ea82699ea
+  - enabled: 1
+    path: Assets/For game/Scenes/playing/Chapters 2/8/Dialog/Dialog8(2).unity
+    guid: 6895bfbf918b22e439759a83e97620e0
+  - enabled: 1
+    path: Assets/For game/Scenes/playing/Chapters 2/8/Dialog/Dialog8(3).unity
+    guid: 95c22d2fe7347194086747f014dbbb06
+  - enabled: 1
+    path: Assets/For game/Scenes/playing/Chapters 2/8/Dialog/Dialog8(4).unity
+    guid: e69be5c8f90eb2b4bb9d2cc363489252
+  - enabled: 1
+    path: Assets/For game/Scenes/playing/Chapters 2/8/Dialog/Dialog8(5).unity
+    guid: d20791545ebee0a408d7131b4bf45532
+  - enabled: 1
+    path: Assets/For game/Scenes/playing/Chapters 2/8/Dialog/Dialog8(6).unity
+    guid: 8285d3e72a820b3429d88c5e6f358a00
+  - enabled: 1
+    path: Assets/For game/Scenes/playing/Chapters 2/8/Dialog/Dialog8(7).unity
+    guid: 91ba03074cfc4e148a2db84f0f5a5b36
+  - enabled: 1
+    path: Assets/For game/Scenes/playing/Chapters 2/8/Dialog/Dialog8(8).unity
+    guid: a108a47a40b3b7b4dad672c79859bcb2
+  - enabled: 1
+    path: Assets/For game/Scenes/playing/Chapters 2/8/Playgraund(1).unity
+    guid: 25d751e96adf3c54e9d3a447fb640f79
+  - enabled: 1
+    path: Assets/For game/Scenes/playing/Chapters 2/8/Playgraund(2).unity
+    guid: 1ef2649153d1a004faa53e4432c4241f
+  - enabled: 1
+    path: Assets/For game/Scenes/playing/Chapters 2/8/Playgraund(3).unity
+    guid: 9f138be275684ed4dacf695313b6b4d8
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 89a6787c85f482a4a9b21eb8d7479537, type: 2}
     com.unity.localization.settings: {fileID: 11400000, guid: 8aa056e0d4d4ed7459c20b2a8e0d57af, type: 2}
