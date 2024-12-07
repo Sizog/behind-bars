@@ -408,6 +408,21 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/For game/Scenes/playing/Chapters 2/8/Playgraund(3).unity
     guid: 9f138be275684ed4dacf695313b6b4d8
+  - enabled: 1
+    path: Assets/For game/Scenes/playing/Chapters 2/9/9Car1.unity
+    guid: 4098adf4f5c819f47be30b6b08dab0b2
+  - enabled: 1
+    path: Assets/For game/Scenes/playing/Chapters 2/9/9Car2.unity
+    guid: 93073d7132b495e4e833c22f24cc8760
+  - enabled: 1
+    path: Assets/For game/Scenes/playing/Chapters 2/9/9Car3.unity
+    guid: 04dc3d15b176f734aa3fe7343f6b1c67
+  - enabled: 1
+    path: Assets/For game/Scenes/playing/Chapters 3/Chapter 3.unity
+    guid: 491ad4e370e523843a1d3fb4d64bb629
+  - enabled: 1
+    path: Assets/For game/Scenes/The and.unity
+    guid: d6b057eb5c8e1434891883eac46d1e7c
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 89a6787c85f482a4a9b21eb8d7479537, type: 2}
     com.unity.localization.settings: {fileID: 11400000, guid: 8aa056e0d4d4ed7459c20b2a8e0d57af, type: 2}

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -61,11 +62,13 @@ public class RoomObject : MonoBehaviour
 
             case RoomObjectType.InventoryItem:
                 bool itemCollected = false;
-                for (int i = 0; i < roomLogic.Inventory.Count; i++)
-                {
-                    if (roomLogic.Inventory[i].index == itemIndex)
+                if (roomLogic != null && roomLogic.Inventory != null) {
+                    for (int i = 0; i < roomLogic.Inventory.Count; i++)
                     {
-                        itemCollected = true;
+                        if (roomLogic.Inventory[i].index == itemIndex)
+                        {
+                            itemCollected = true;
+                        }
                     }
                 }
 
@@ -108,7 +111,7 @@ public class RoomObject : MonoBehaviour
                 }
                 if (foundItemIndex > -1)
                 {
-                    roomLogic.AddTextBlockMessage("Вы используете " + roomLogic.Inventory[foundItemIndex].itemName);
+                    roomLogic.AddTextBlockMessage("пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ " + roomLogic.Inventory[foundItemIndex].itemName);
                     roomLogic.Inventory.RemoveAt(foundItemIndex);
                     SceneManager.LoadScene(DoorSceneName);
 
