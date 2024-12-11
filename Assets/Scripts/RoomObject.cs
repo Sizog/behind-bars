@@ -111,7 +111,7 @@ public class RoomObject : MonoBehaviour
                 }
                 if (foundItemIndex > -1)
                 {
-                    roomLogic.AddTextBlockMessage("�� ����������� " + roomLogic.Inventory[foundItemIndex].itemName);
+                    roomLogic.AddTextBlockMessage("Вы используете " + roomLogic.Inventory[foundItemIndex].itemName);
                     roomLogic.Inventory.RemoveAt(foundItemIndex);
                     SceneManager.LoadScene(DoorSceneName);
 

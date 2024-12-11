@@ -309,7 +309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: action
   objectType: 4
-  DoorSceneName: minicase 3
+  DoorSceneName: 
   MessageText: 
   itemIndex: 100
   itemName: ' '
@@ -566,6 +566,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be34cb62072d89246ab198e79acc1c19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Inventory: []
   VisitedLocationLog: []
   selectedObject: {fileID: 0}
   cursorTextures:
