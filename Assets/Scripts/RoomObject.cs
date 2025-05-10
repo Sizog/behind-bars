@@ -15,7 +15,7 @@ public class RoomObject : MonoBehaviour
     public string itemName;
 
     private RoomLogic roomLogic;
-    private float timer = 0.1f;
+    private float timer = 0.0f;
 
     private void Start()
     {
@@ -29,7 +29,6 @@ public class RoomObject : MonoBehaviour
         timer -= Time.deltaTime;
         if (timer < 0.0f)
         {
-            timer = 0.0f;
             LateStart();
         }
     }
