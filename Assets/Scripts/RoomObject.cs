@@ -61,12 +61,24 @@ public class RoomObject : MonoBehaviour
 
             case RoomObjectType.InventoryItem:
                 bool itemCollected = false;
-                if (roomLogic != null && roomLogic.Inventory != null) {
-                    for (int i = 0; i < roomLogic.Inventory.Count; i++)
-                    {
-                        if (roomLogic.Inventory[i].index == itemIndex)
+                if (roomLogic != null) {
+                    if (roomLogic.Inventory != null) {
+                        for (int i = 0; i < roomLogic.Inventory.Count; i++)
                         {
-                            itemCollected = true;
+                            if (roomLogic.Inventory[i].index == itemIndex)
+                            {
+                                itemCollected = true;
+                            }
+                        }
+                    }
+                    if (roomLogic.Inventory2 != null)
+                    {
+                        foreach (RoomLogic.InventoryItem inventoryItem in roomLogic.Inventory2)
+                        {
+                            if (inventoryItem.index == itemIndex)
+                            {
+                                itemCollected = true;
+                            }
                         }
                     }
                 }
@@ -77,7 +89,6 @@ public class RoomObject : MonoBehaviour
                 }
                 break;
         }
-
     }
     public void ExecuteRoomObject()
     {

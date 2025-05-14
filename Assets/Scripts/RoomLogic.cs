@@ -7,7 +7,7 @@ using UnityEngine.UIElements;
 public class RoomLogic : MonoBehaviour
 {
     [Serializable]
-    public struct InventoryItem
+    public class InventoryItem
     {
         [SerializeField] public int index;
         [SerializeField] public string itemName;
@@ -18,8 +18,8 @@ public class RoomLogic : MonoBehaviour
             itemName = _itemName;
         }
     };
-    [SerializeField]
-    public List<InventoryItem> Inventory;
+    [SerializeField] public List<InventoryItem> Inventory;
+    [SerializeField] public List<InventoryItem> Inventory2;
     public List<string> VisitedLocationLog;
 
     public GameObject selectedObject;
@@ -70,7 +70,8 @@ public class RoomLogic : MonoBehaviour
         var rootVisualElement = GetComponent<UIDocument>().rootVisualElement;
         textBlock = rootVisualElement.Q<Label>("TextBlock");
         stateString = rootVisualElement.Q<Label>("StateString");
-        Inventory = new List<InventoryItem>(); 
+        Inventory = new List<InventoryItem>();
+        Inventory2 = new List<InventoryItem>();
         VisitedLocationLog = new List<string>();
         textBlockLines = new string[textBlockLinesCount];
         for (int i = 0; i < textBlockLines.Length; i++)
@@ -114,6 +115,8 @@ public class RoomLogic : MonoBehaviour
     {
         InventoryItem item = new InventoryItem(_index, _displayName);
         Inventory.Add(item);
+        // InventoryItem item2 = new InventoryItem(_index, _displayName);
+        Inventory2.Add(item);
     }
 
     public void ShowInventory()
