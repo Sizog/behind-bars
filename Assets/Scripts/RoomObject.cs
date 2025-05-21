@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class RoomObject : MonoBehaviour
 {
     public string displayName;
-    public enum RoomObjectType { InventoryItem, TextMessage, Door, LocationInfo, RedirectByItem, GameExit};
+    public enum RoomObjectType { InventoryItem, TextMessage, Door, LocationInfo, RedirectByItem, GameExit, InventoryController};
     public RoomObjectType objectType;
     public string DoorSceneName;
     public string MessageText;
@@ -121,19 +121,17 @@ public class RoomObject : MonoBehaviour
                 }
                 if (foundItemIndex > -1)
                 {
-                    roomLogic.AddTextBlockMessage("Вы используете " + roomLogic.Inventory[foundItemIndex].itemName);
-                    roomLogic.Inventory.RemoveAt(foundItemIndex);
-                    SceneManager.LoadScene(DoorSceneName);
-
+                    if (roomLogic.Inventory[foundItemIndex].itemName != " ") {
+                        roomLogic.AddTextBlockMessage("Вы используете " + roomLogic.Inventory[foundItemIndex].itemName);
+                        roomLogic.Inventory.RemoveAt(foundItemIndex);
+                        SceneManager.LoadScene(DoorSceneName);
+                    }
                 }
                 else
                 {
-                   roomLogic.AddTextBlockMessage(MessageText);
+                    roomLogic.AddTextBlockMessage(MessageText);
                 }
                 break;
-
-
-
         }
         
     }

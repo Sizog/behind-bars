@@ -381,7 +381,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &482082351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -410,6 +410,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be34cb62072d89246ab198e79acc1c19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Inventory: []
+  Inventory2: []
   VisitedLocationLog: []
   selectedObject: {fileID: 0}
   cursorTextures:

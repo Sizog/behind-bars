@@ -1,0 +1,351 @@
+using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class RoomObject : MonoBehaviour
+{
+    public string displayName;
+    public enum RoomObjectType { InventoryItem, TextMessage, Door, LocationInfo, RedirectByItem, GameExit};
+    public RoomObjectType objectType;
+    public string DoorSceneName;
+    public string MessageText;
+    public int itemIndex;
+    public string itemName;
+
+    private RoomLogic roomLogic;
+    private float timer = 0.0f;
+
+    private void Start()
+    {
+        roomLogic = GameObject.Find("RoomLogic").GetComponent<RoomLogic>();
+        
+        
+    }
+
+    private void Update()
+    {
+        timer -= Time.deltaTime;
+        if (timer < 0.0f)
+        {
+            LateStart();
+        }
+    }
+    private void LateStart()
+    {
+        
+        switch (objectType)
+        {
+            case RoomObjectType.LocationInfo:
+                bool locVisited = false;
+                for (int i = 0; i < roomLogic.VisitedLocationLog.Count; i++)
+                {
+                    if (roomLogic.VisitedLocationLog[i] == SceneManager.GetActiveScene().name)
+                    {
+                        locVisited = true;
+                    }
+                }
+
+                if (locVisited)
+                {
+                    Destroy(gameObject);
+                }
+                else
+                {
+                    roomLogic.AddTextBlockMessage(MessageText);
+                    roomLogic.VisitedLocationLog.Add(SceneManager.GetActiveScene().name);
+                    Destroy(gameObject);
+                }
+                break;
+
+            case RoomObjectType.InventoryItem:
+                bool itemCollected = false;
+                if (roomLogic != null) {
+                    if (roomLogic.Inventory != null) {
+                        for (int i = 0; i < roomLogic.Inventory.Count; i++)
+                        {
+                            if (roomLogic.Inventory[i].index == itemIndex)
+                            {
+                                itemCollected = true;
+                            }
+                        }
+                    }
+                    if (roomLogic.Inventory2 != null)
+                    {
+                        foreach (RoomLogic.InventoryItem inventoryItem in roomLogic.Inventory2)
+                        {
+                            if (inventoryItem.index == itemIndex)
+                            {
+                                itemCollected = true;
+                            }
+                        }
+                    }
+                }
+
+                if (itemCollected)
+                {
+                    Destroy(gameObject);
+                }
+                break;
+        }
+    }
+    public void ExecuteRoomObject()
+    {
+        switch (objectType)
+        {
+            case RoomObjectType.GameExit:
+                Application.Quit();
+                break;
+            case RoomObjectType.Door:
+                SceneManager.LoadScene(DoorSceneName);
+                break;
+            case RoomObjectType.TextMessage:
+                roomLogic.AddTextBlockMessage(MessageText);
+                break;
+            case RoomObjectType.InventoryItem:
+                roomLogic.AddInventoryItem(itemIndex, itemName);
+                roomLogic.AddTextBlockMessage(itemName + " "+roomLogic.locGoesToInventory);
+                roomLogic.ShowInventory();
+                Destroy(gameObject);
+                break;
+            case RoomObjectType.RedirectByItem:
+                int foundItemIndex = -1;
+                for (int i = 0; i < roomLogic.Inventory.Count; i++)
+                {
+                    if (roomLogic.Inventory[i].index == itemIndex)
+                    {
+                        foundItemIndex = i;
+
+                    }
+                }
+                if (foundItemIndex > -1)
+                {
+                    roomLogic.AddTextBlockMessage("Вы используете " + roomLogic.Inventory[foundItemIndex].itemName);
+                    roomLogic.Inventory.RemoveAt(foundItemIndex);
+                    SceneManager.LoadScene(DoorSceneName);
+
+                }
+                else
+                {
+                   roomLogic.AddTextBlockMessage(MessageText);
+                }
+                break;
+
+
+
+        }
+        
+    }
+}
+
+
+
+
+
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UIElements;
+
+public class RoomLogic : MonoBehaviour
+{
+    [Serializable]
+    public class InventoryItem
+    {
+        [SerializeField] public int index;
+        [SerializeField] public string itemName;
+
+        public InventoryItem(int _index, string _itemName)
+        {
+            index = _index;
+            itemName = _itemName;
+        }
+    };
+    [SerializeField] public List<InventoryItem> Inventory;
+    [SerializeField] public List<InventoryItem> Inventory2;
+    public List<string> VisitedLocationLog;
+
+    public GameObject selectedObject;
+
+    public Texture2D[] cursorTextures;
+    // 0 - ������ �����
+    // 1 - ������ ����
+    // 2 - ������ ��������
+    // 3 - ������ ����� �������
+
+
+    public CursorMode cursorMode = CursorMode.Auto;
+    public Vector2 hotSpot = Vector2.zero;
+
+
+
+    private Label textBlock;
+    private Label stateString;
+
+    private int textBlockLinesCount = 4;
+    private string[] textBlockLines;
+    private int textBlockCounter = 0;
+
+    private static RoomLogic roomLogicInstance;
+
+
+    public string locGoesToInventory;
+    public string locInventoryIncludes;
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(this);
+
+        if (roomLogicInstance == null)
+        {
+            roomLogicInstance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+    private void Start()
+    {
+        // Switch to 1920 x 1080 windowed
+        Screen.SetResolution(1920 , 1080, false);
+
+        var rootVisualElement = GetComponent<UIDocument>().rootVisualElement;
+        textBlock = rootVisualElement.Q<Label>("TextBlock");
+        stateString = rootVisualElement.Q<Label>("StateString");
+        Inventory = new List<InventoryItem>();
+        Inventory2 = new List<InventoryItem>();
+        VisitedLocationLog = new List<string>();
+        textBlockLines = new string[textBlockLinesCount];
+        for (int i = 0; i < textBlockLines.Length; i++)
+        {
+            textBlockLines[i] = new string("");
+        }
+
+        textBlock.text = "\n\n";
+    }
+
+    public void AddTextBlockMessage(string message)
+    {
+        if (textBlockCounter < textBlockLinesCount)
+        {
+            textBlockLines[textBlockCounter] = message + "\n\n";
+            textBlockCounter++;
+            Debug.Log(textBlockCounter.ToString());
+        }
+        else
+        {
+            for (int j = 0; j < textBlockCounter - 1; j++)
+            {
+                textBlockLines[j] = textBlockLines[j + 1];
+            }
+            
+            textBlockLines[textBlockCounter-1] = message + "\n\n";
+        }
+
+        textBlock.text = "";
+        string colorCodeString = "#d9d9d9";
+        for (int i = 0; i < textBlockCounter-1; i++)
+        {
+            textBlock.text += "<color=" + colorCodeString + ">"+textBlockLines[i]+"</color>";
+        }
+
+        colorCodeString = "#faff25";
+        textBlock.text += "<color=" + colorCodeString + ">"+textBlockLines[textBlockCounter - 1]+"</color>";
+
+    }
+    public void AddInventoryItem(int _index, string _displayName)
+    {
+        InventoryItem item = new InventoryItem(_index, _displayName);
+        Inventory.Add(item);
+        // InventoryItem item2 = new InventoryItem(_index, _displayName);
+        Inventory2.Add(item);
+    }
+
+    public void ShowInventory()
+    {
+        string invText = "";
+        invText += locInventoryIncludes + "\n";
+        for (int i = 0; i < Inventory.Count; i++)
+        {
+            invText += Inventory[i].itemName + "\n";
+        }
+
+        AddTextBlockMessage(invText);
+    }
+
+    public void ClearInventory() {
+        Inventory.Clear();
+        ShowInventory();
+    }
+    void Update()
+    {
+
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        Collider2D targetObject = Physics2D.OverlapPoint(mousePosition);
+        if (targetObject)
+        {
+            selectedObject = targetObject.transform.gameObject;
+            RoomObject RO;
+            RO = selectedObject.GetComponent<RoomObject>();
+            if (RO)
+            {
+                stateString.text = RO.displayName;
+                switch (RO.objectType)
+                {
+                    case RoomObject.RoomObjectType.Door:
+                        UnityEngine.Cursor.SetCursor(cursorTextures[0], hotSpot, cursorMode);
+                    break;
+                    case RoomObject.RoomObjectType.GameExit:
+                        UnityEngine.Cursor.SetCursor(cursorTextures[0], hotSpot, cursorMode);
+                        break;
+                    case RoomObject.RoomObjectType.TextMessage:
+                        UnityEngine.Cursor.SetCursor(cursorTextures[1], hotSpot, cursorMode);
+                    break;
+                    case RoomObject.RoomObjectType.RedirectByItem:
+                        UnityEngine.Cursor.SetCursor(cursorTextures[2], hotSpot, cursorMode);
+                    break;
+                    case RoomObject.RoomObjectType.InventoryItem:
+                        UnityEngine.Cursor.SetCursor(cursorTextures[3], hotSpot, cursorMode);
+                    break;
+                }
+                
+            }  
+        }
+        else
+        {
+            selectedObject = null;
+            UnityEngine.Cursor.SetCursor(null, Vector2.zero, cursorMode);
+            stateString.text = "";
+        }
+
+        if (Input.GetMouseButtonUp(0) && selectedObject)
+        {
+            selectedObject.GetComponent<RoomObject>().ExecuteRoomObject();
+            
+        }
+
+   
+    }
+}
+
+
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class ClearInventory : MonoBehaviour
+{
+
+    public RoomLogic roomLogic;
+    private void Start()
+    {
+        roomLogic = GameObject.Find("RoomLogic").GetComponent<RoomLogic>();
+        roomLogic.ClearInventory();
+    }
+}
