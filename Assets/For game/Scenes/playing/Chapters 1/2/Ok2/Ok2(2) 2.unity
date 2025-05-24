@@ -326,6 +326,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be34cb62072d89246ab198e79acc1c19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Inventory: []
+  Inventory2: []
   VisitedLocationLog: []
   selectedObject: {fileID: 0}
   cursorTextures:
@@ -1367,7 +1369,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: action
   objectType: 4
-  DoorSceneName: Ok2(2) 2
+  DoorSceneName: 
   MessageText: 
   itemIndex: 100
   itemName: ' '

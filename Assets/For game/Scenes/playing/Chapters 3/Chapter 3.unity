@@ -426,6 +426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Inventory: []
+  Inventory2: []
   VisitedLocationLog: []
   selectedObject: {fileID: 0}
   cursorTextures:
